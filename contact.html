@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Chinmay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body data-page="contact">
+  <!-- Replace images/bg-contact.jpg (1600 x 900 px recommended) -->
+  <div class="art art-right"><img src="images/bg-contact.jpg" alt="" data-optional></div>
+
+  <main class="page contact">
+    <div class="container layout">
+      <section class="intro">
+        <p class="eyebrow">Get In Touch</p>
+        <h1 class="page-title">Let’s <span class="accent">Connect</span></h1>
+        <p class="lead big">Have a <span class="accent-text">project idea</span> or an opportunity?<br>I’d love to hear from you.</p>
+        <p class="lead small">I’m a <span class="accent-text">fresher</span>, passionate Web Developer, looking for internship opportunities to learn, grow and contribute to real-world projects.</p>
+
+        <a class="wa-link" id="wa-link" href="#" target="_blank" rel="noopener">
+          <span class="icon-circle"><svg class="i"><use href="#i-whatsapp"/></svg></span>
+          <span class="wa-text"><strong>Chat with me on WhatsApp</strong><small>Quick responses <i>•</i> Friendly conversation</small></span>
+          <svg class="i"><use href="#i-arrow"/></svg>
+        </a>
+        <p class="script-note sign">Feel free to reach out —<br>I’m always open to new opportunities!</p>
+      </section>
+
+      <form class="card form" id="contact-form" novalidate>
+        <p class="form-label">Send Me A Message</p>
+
+        <label for="name">Full Name</label>
+        <div class="field"><svg class="i"><use href="#i-user"/></svg><input id="name" name="name" type="text" placeholder="Enter your name" required></div>
+
+        <label for="subject">Subject</label>
+        <div class="field"><svg class="i"><use href="#i-list"/></svg><input id="subject" name="subject" type="text" placeholder="What is this about?" required></div>
+
+        <label for="message">Message</label>
+        <div class="field area"><svg class="i"><use href="#i-chat"/></svg><textarea id="message" name="message" placeholder="Tell me about your project, opportunity or just say hi..." required></textarea></div>
+
+        <p class="error" id="form-error" role="alert" hidden></p>
+        <button class="btn btn-solid send" type="submit"><svg class="i"><use href="#i-whatsapp"/></svg> Send Message <svg class="i"><use href="#i-arrow"/></svg></button>
+      </form>
+
+      <aside class="open-card card">
+        <span class="icon-circle"><svg class="i"><use href="#i-send"/></svg></span>
+        <div><strong>Open to Opportunities</strong><p>Web Development Internships <svg class="i"><use href="#i-arrow"/></svg><br>&amp; Collaboration</p></div>
+      </aside>
+    </div>
+  </main>
+
+
+  <script src="common.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>

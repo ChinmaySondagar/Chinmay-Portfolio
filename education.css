@@ -1,0 +1,288 @@
+/* ==========================================================
+   education.css — Education Page Only
+   ========================================================== */
+
+/* Intro Section */
+.education .intro {
+  max-width: 640px;
+  padding-top: var(--s4);
+}
+
+.education .art-note {
+  position: absolute;
+  top: 20px;
+  right: var(--gutter);
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  transform: rotate(-8deg);
+}
+
+/* ==========================================================
+   Main Layout
+   ========================================================== */
+
+.education .layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 410px;
+  align-items: start;
+  gap: var(--s4);
+  margin-top: var(--s5);
+}
+
+/* ==========================================================
+   Timeline
+   ========================================================== */
+
+.education .timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  margin: 0;
+  padding-left: 34px;
+}
+
+.education .timeline::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--green-dim);
+  content: "";
+}
+
+/* Timeline Entry */
+.education .entry {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  min-height: 146px;
+  padding: var(--s2) var(--s3) var(--s2) var(--s2);
+}
+
+.education .entry::before {
+  position: absolute;
+  top: 50%;
+  left: -34px;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -4px;
+  border: 1.5px solid var(--green);
+  border-radius: 50%;
+  background: var(--bg);
+  content: "";
+}
+
+.education .entry::after {
+  position: absolute;
+  top: 50%;
+  left: -26px;
+  width: 26px;
+  height: 1px;
+  background: var(--green-dim);
+  content: "";
+}
+
+/* ==========================================================
+   Timeline Date and Icon
+   ========================================================== */
+
+.education .when {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  gap: 6px;
+  width: 150px;
+  padding-right: var(--s2);
+  border-right: 1px solid rgba(127, 193, 127, 0.2);
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.education .when .icon-circle {
+  width: 66px;
+  height: 66px;
+  font-size: 1.8rem;
+}
+
+/* ==========================================================
+   Timeline Content
+   ========================================================== */
+
+.education .what {
+  flex: 1;
+  min-width: 0;
+}
+
+.education .row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s2);
+}
+
+.education .what h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.education .org {
+  margin-top: 4px;
+  color: var(--green);
+  font-size: 1rem;
+}
+
+.education .meta {
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.education .sep {
+  margin: 0 12px;
+  color: var(--green-dim);
+}
+
+/* ==========================================================
+   Sidebar
+   ========================================================== */
+
+.education .side {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  gap: var(--s3);
+  margin: 0;
+}
+
+/* Highlights */
+.education .highlights {
+  padding: var(--s3);
+}
+
+.education .highlights h3 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: var(--s2);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.education .highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.education .highlights li .i {
+  margin-top: 4px;
+  color: var(--green);
+}
+
+/* Small Icon Circle */
+.education .icon-circle.sm {
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================
+   Quote
+   ========================================================== */
+
+.education .quote {
+  padding: var(--s3);
+}
+
+.education .quote blockquote {
+  margin: var(--s2) 0 var(--s1);
+  padding: 0 var(--s2);
+  color: var(--green);
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.education .quote cite {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: normal;
+  text-align: right;
+}
+
+/* ==========================================================
+   Tablet Responsive
+   ========================================================== */
+
+@media (max-width: 1100px) {
+  .education .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .education .side {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   Mobile Responsive
+   ========================================================== */
+
+@media (max-width: 640px) {
+  .education .art-note {
+    display: none;
+  }
+
+  .education .timeline {
+    padding-left: 22px;
+  }
+
+  .education .entry {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s2);
+  }
+
+  .education .entry::before {
+    left: -22px;
+  }
+
+  .education .entry::after {
+    display: none;
+  }
+
+  .education .when {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--s2);
+    width: 100%;
+    padding: 0;
+    border-right: 0;
+    text-align: left;
+  }
+
+  .education .when .icon-circle {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+  }
+
+  .education .row {
+    flex-direction: column;
+  }
+
+  .education .what h3 {
+    font-size: 1.1rem;
+  }
+}

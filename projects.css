@@ -1,0 +1,278 @@
+
+/* ==========================================================
+   projects.css — Projects page only
+   ========================================================== */
+
+/* Background Artwork */
+.art-full {
+  inset: 0 0 0 auto;
+  width: 68%;
+  height: 100%;
+}
+
+.art-full img {
+  object-position: left center;
+}
+
+.art-full::after {
+  background:
+    linear-gradient(
+      90deg,
+      var(--bg) 0%,
+      rgba(6, 18, 13, 0.55) 22%,
+      rgba(6, 18, 13, 0) 55%,
+      rgba(6, 18, 13, 0.35) 100%
+    ),
+    linear-gradient(
+      0deg,
+      var(--bg) 0%,
+      transparent 25%
+    );
+}
+
+/* Header */
+.site-header {
+  position: relative;
+  z-index: 50;
+}
+
+/* Project Layout */
+.projects .project {
+  padding-top: 0px;
+  max-width: 720px;
+}
+
+/* Title */
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.leaf {
+  color: var(--green);
+  font-size: 5rem;
+  line-height: 0;
+}
+
+.projects .page-title {
+  font-size: clamp(2.4rem, 5vw, 4.4rem);
+}
+
+/* Tagline */
+.tagline {
+  font-size: 1.1rem;
+  margin-top: 4px;
+}
+
+.tagline span {
+  margin: 0 12px;
+  color: var(--green-dim);
+}
+
+/* Project Description */
+.desc {
+  margin-top: var(--s4);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  max-width: 32em;
+}
+
+.accent-text {
+  color: var(--green);
+  font-weight: 400;
+}
+
+/* Project Status and Technologies */
+.status-row {
+  display: flex;
+  align-items: center;
+  margin-top: var(--s3);
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.status,
+.tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 18px;
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  background: rgba(6, 18, 13, 0.55);
+}
+
+.status {
+  color: var(--green-bright);
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 10px var(--green);
+}
+
+.tech {
+  gap: 14px;
+  font-size: 0.88rem;
+}
+
+.tech .i {
+  color: var(--green);
+}
+
+/* Project Action Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+
+.projects .btn {
+  height: 58px;
+  min-width: 244px;
+}
+
+.btn-outline.light {
+  color: var(--text);
+}
+
+/* Project Features */
+.features {
+  margin-top: var(--s4);
+  padding-top: var(--s2);
+  border-top: 1px solid var(--green-dim);
+}
+
+.features-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--green);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.features-title small {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.features ul {
+  display: flex;
+  gap: var(--s3);
+  margin-top: var(--s2);
+  flex-wrap: wrap;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.88rem;
+  padding-right: var(--s3);
+  border-right: 1px solid rgba(127, 193, 127, 0.25);
+  line-height: 1.5;
+}
+
+.features li:last-child {
+  border-right: 0;
+}
+
+.icon-circle.sm {
+  width: 50px;
+  height: 50px;
+  font-size: 1.4rem;
+}
+
+/* Code Card */
+.code-card {
+  position: absolute;
+  top: 60px;
+  right: var(--gutter);
+  width: 240px;
+  padding: var(--s2);
+  border: var(--border);
+  border-radius: var(--radius);
+  background: rgba(6, 18, 13, 0.7);
+  font-size: 0.72rem;
+  color: #cfe8cf;
+}
+
+.code-card .i {
+  color: var(--green);
+  font-size: 1.6rem;
+}
+
+.code-card pre {
+  margin: 8px 0 0;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+.ln {
+  color: var(--green-dim);
+  margin-right: 10px;
+}
+
+/* ==========================================================
+   Responsive Design
+   ========================================================== */
+
+/* Smaller Laptops and Tablets */
+@media (max-width: 1100px) {
+  .code-card {
+    display: none;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .art-full {
+    width: 100%;
+  }
+
+  .art-full::after {
+    background: rgba(6, 18, 13, 0.82);
+  }
+
+  .leaf {
+    font-size: 3.4rem;
+  }
+
+  .actions {
+    gap: var(--s2);
+  }
+
+  .projects .btn {
+    min-width: 0;
+    flex: 1 1 220px;
+  }
+
+  .features li {
+    border-right: 0;
+    padding-right: 0;
+  }
+}
+
+
+/* Projects Page — Fix Top Spacing */
+.page.projects {
+  padding-top: 15px;
+}
+
+.projects .project {
+  padding-top: 0;
+  margin-top: 0;
+}

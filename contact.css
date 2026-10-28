@@ -1,0 +1,321 @@
+
+/* ==========================================================
+   contact.css — Contact page only
+   ========================================================== */
+
+/* Background Artwork */
+.art-right {
+  top: 0;
+  right: 0;
+  width: 55vw;
+  height: 100%;
+}
+
+.art-right img {
+  object-position: left bottom;
+}
+
+.art-right::after {
+  background:
+    linear-gradient(
+      90deg,
+      var(--bg) 0%,
+      rgba(6, 18, 13, 0.15) 45%,
+      rgba(6, 18, 13, 0.25) 100%
+    ),
+    linear-gradient(
+      0deg,
+      var(--bg) 0%,
+      transparent 25%
+    );
+}
+
+/* Contact Layout */
+.contact .layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(380px, 470px) 1fr;
+  gap: var(--s4);
+  align-items: start;
+  padding-top: var(--s2);
+  position: relative;
+}
+
+.contact .intro {
+  grid-column: 1;
+}
+
+.contact .form {
+  grid-column: 2;
+}
+
+.contact .open-card {
+  grid-column: 3;
+  justify-self: end;
+  width: 100%;
+  max-width: 330px;
+}
+
+.contact .page-title {
+  font-size: clamp(2.6rem, 5.4vw, 4.6rem);
+  white-space: nowrap;
+}
+
+/* Intro Text */
+.lead.big {
+  font-size: 1.35rem;
+  margin-top: var(--s3);
+  line-height: 1.5;
+}
+
+.lead.small {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-top: var(--s2);
+}
+
+.accent-text {
+  color: var(--green);
+}
+
+/* WhatsApp Link */
+.wa-link {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s4);
+  padding-bottom: var(--s3);
+  border-bottom: 1px solid rgba(127, 193, 127, 0.3);
+  max-width: 450px;
+  transition: transform 0.2s;
+}
+
+.wa-link:hover {
+  transform: translateX(4px);
+}
+
+.wa-link .icon-circle {
+  width: 72px;
+  height: 72px;
+}
+
+.wa-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.wa-text strong {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.wa-text small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.wa-text i {
+  margin: 0 8px;
+  color: var(--green);
+  font-style: normal;
+}
+
+.wa-link > .i {
+  color: var(--green);
+  font-size: 1.3rem;
+}
+
+/* Signature */
+.sign {
+  font-size: 1.7rem;
+  margin-top: var(--s5);
+  transform: rotate(-6deg);
+  opacity: 0.95;
+}
+
+/* Contact Form */
+.form {
+  padding: var(--s4);
+  border-radius: 18px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--green);
+  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: var(--s3);
+}
+
+.form-label::after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: var(--green-dim);
+}
+
+.form label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.98rem;
+  margin: var(--s2) 0 var(--s1);
+}
+
+.form label:first-of-type {
+  margin-top: 0;
+}
+
+/* Form Fields */
+.field {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 52px;
+  padding: 0 16px;
+  border: var(--border);
+  border-radius: 12px;
+  background: rgba(6, 18, 13, 0.7);
+  color: var(--green);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field:focus-within {
+  border-color: var(--green-bright);
+  box-shadow: 0 0 0 3px rgba(127, 193, 127, 0.15);
+}
+
+.field .i {
+  font-size: 1.4rem;
+}
+
+.field input,
+.field textarea {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+.field.area {
+  height: 144px;
+  align-items: flex-start;
+  padding-top: 14px;
+}
+
+.field textarea {
+  height: 100%;
+  resize: none;
+}
+
+/* Submit Button */
+.send {
+  width: 100%;
+  height: 54px;
+  margin-top: var(--s3);
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+/* Validation Error */
+.error {
+  color: #f3a6a6;
+  font-size: 0.85rem;
+  margin-top: var(--s2);
+}
+
+/* Open / Availability Card */
+.open-card {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s2) var(--s3);
+  margin-top: var(--s2);
+}
+
+.open-card .icon-circle {
+  width: 52px;
+  height: 52px;
+  font-size: 1.4rem;
+}
+
+.open-card strong {
+  font-weight: 500;
+  display: block;
+}
+
+.open-card p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.open-card p .i {
+  color: var(--green);
+  vertical-align: middle;
+}
+
+/* ==========================================================
+   Responsive Design
+   ========================================================== */
+
+/* Tablets and Smaller Laptops */
+@media (max-width: 1200px) {
+  .contact .layout {
+    grid-template-columns: 1fr minmax(360px, 460px);
+  }
+
+  .contact .open-card {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .contact .form {
+    grid-row: 1;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 860px) {
+  .art-right {
+    width: 100%;
+    opacity: 0.35;
+  }
+
+  .contact .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact .intro,
+  .contact .form,
+  .contact .open-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .contact .page-title {
+    white-space: normal;
+  }
+
+  .form {
+    padding: var(--s3);
+  }
+
+  .sign {
+    margin-top: var(--s3);
+  }
+}

@@ -1,0 +1,259 @@
+/* style.css — Home page only */
+:root {
+  --bg: #07120d;
+  --accent: #86b47a;
+  --font: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* Hero Section */
+.home .hero {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.95fr) 1.05fr;
+  align-items: center;
+  gap: clamp(24px, 5vw, 90px);
+  min-height: calc(100vh - var(--header-h) - 40px);
+}
+
+/* Profile: CSS circle with transparent PNG anchored to the bottom */
+
+.profile-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+  margin-left: clamp(0px, 2vw, 40px);
+}
+
+.profile-circle {
+  position: absolute;
+  top: 6.25%;
+  left: 3.125%;
+  width: 93.75%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #86b47a;
+}
+
+.profile-img {
+  position: absolute;
+  top: 6.25%;
+  left: 3.125%;
+  width: 93.75%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+
+/* Profile Image Bottom Fade */
+.profile-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18%;
+  background: linear-gradient(0deg, var(--bg), transparent);
+  pointer-events: none;
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: clamp(2.4rem, 5.4vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-sub {
+  font-size: clamp(1.4rem, 2.8vw, 2.5rem);
+  font-weight: 700;
+  margin-top: 4px;
+  min-height: 1.25em;
+  white-space: nowrap;
+}
+
+/* Typewriter Caret */
+.caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  background: var(--text);
+  vertical-align: -0.08em;
+  margin-left: 4px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Hero Description */
+.hero-desc {
+  margin-top: var(--s3);
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+  font-weight: 300;
+  color: var(--text);
+  max-width: 31em;
+  line-height: 1.8;
+}
+
+/* Social Links */
+/* .socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin: var(--s3) 0;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: var(--border);
+  font-size: 1.7rem;
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+}
+
+.socials a:hover {
+background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-3px);
+}
+
+.i{
+ width: 24px;
+  height: 24px;
+  fill: currentColor;
+} */
+
+.social {
+display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  margin: var(--s3) 0;
+}
+
+.social a {
+  width: 52px;
+  height: 52px;
+  border: 1.5px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.social a:hover {
+  background: var(--accent);
+  color: var(--bg);
+  transform: translateY(-2px);
+}
+
+.social svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.social svg.stroke {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* Outline Button */
+/* .home .btn-outline {
+  min-width: 228px;
+  font-size: 1.15rem;
+} */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 42px;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Tablet and Mobile Layout */
+@media (max-width: 900px) {
+  .home .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    min-height: 0;
+    padding-top: var(--s3);
+  }
+
+  .profile-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social {
+    justify-content: center;
+  }
+
+  .hero-sub {
+    font-size: clamp(1.25rem, 5.4vw, 2.2rem);
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+  .social a {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
